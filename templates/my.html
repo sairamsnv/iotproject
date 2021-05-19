@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+	<style>
+	@import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
+
+body{background:#051f42; font-family: 'Didact Gothic', sans-serif;}
+.container { 
+  position: relative;
+  height:50vh;
+  display:block;
+  float:left;
+  width:100%;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left:25%;
+  width:50%;
+  text-align:center;
+  color:#fff;
+  font-weight:bold;
+  letter-spacing:1.8px;
+  }
+  input[type=text], input[type=password]{
+  width: 300px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  background: transparent;
+color: #fff;
+font-weight: bold;
+}
+
+input[type=submit] {
+ width: 300px;
+  background-color: #ffffff;
+  color: #075973;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+.info-links a {
+    font-size: 10px;
+    color: #fff;
+    text-decoration: navajowhite;
+}
+div{
+    color: red;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="vertical-center">
+	<h1>NETSCORE IOT</h1>
+	<h4>Login</h4>
+    <form  action="/sai/" method="POST">
+		<input type="text" name="nam" id="nam" placeholder="Email *"><br>
+		<input type="password" name="pass" id="pass" placeholder="password *"><br><div>{{ds}}</div>
+		<br>
+		<input type="submit" value="Login">
+		<p class="info-links"><a href="#" target="_blank">forgot password?</a> || <a href="/ram/">create account</a></p>
+	</form>
+  </div>
+</div>
+
+
+
+</body>
+</html>

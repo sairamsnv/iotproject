@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="/static/css/IOT_stylesheet.css" rel="stylesheet">
+
+<style>
+</style>
+<body>
+    <div id="navbar-wrapper">
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"><b>Netscore IOT</b></a>
+                    </div>
+                    <div id="navbar-collapse" class="collapse navbar-collapse">
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                </span>
+                            </div>
+                        </form>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a id="flag" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                  <i class="fa fa-file" aria-hidden="true"></i> Docs
+                                </a>
+                            </li>|
+							 <li class="dropdown">
+                                <a id="flag" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                   <i class="fa fa-comments" aria-hidden="true"></i> Contact Sales
+                                </a>
+                            </li>
+							<li class="dropdown">
+                                <a id="flag" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                  <i class="fa fa-life-ring" aria-hidden="true"></i> Support
+                                </a>
+                            </li>
+							<li class="dropdown">
+                                <a id="flag" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                   <i class="fa fa-bell" aria-hidden="true"></i> Notifications
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a id="user-profile" href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="" class="img-responsive img-thumbnail img-circle">{{si}}<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                <ul class="dropdown-menu dropdown-block" role="menu">
+                                    <li><a href="#">Your profile</a></li>
+                                    <li><a href="#">Admin</a></li>
+                                    <li><a href="/">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <aside id="sidebar">
+                <ul id="sidemenu" class="sidebar-nav">
+                    <li>
+                        <a href="#" id="tab1">
+                            <span class="sidebar-icon"><i class="fa fa-square" aria-hidden="true"></i></span>
+                            <span class="sidebar-title">Devices</span>
+                        </a>
+                    </li>
+					 <li>
+                        <a href="#" id="tab2">
+                            <span class="sidebar-icon"><i class="fa fa-users"></i></span>
+                            <span class="sidebar-title">Trucks</span>
+                        </a>
+                    
+                    </li>
+                    <li>
+                        <a href="#" id="tab3">
+                            <span class="sidebar-icon"><i class="fa fa-users"></i></span>
+                            <span class="sidebar-title">Analytics</span>
+                        </a>
+                    
+                    </li>
+                    <li>
+							<a href="#" id="tab4">
+								<span class="sidebar-icon"><i class="fa fa-newspaper-o"></i></span>
+								<span class="sidebar-title">Netscore ChartBot</span>
+								
+								
+							</a>
+                    </li>
+                   <!--  <li>
+                        <a href="#" id="tab5">
+                            <span class="sidebar-icon"><i class="fa fa-database"></i></span>
+                            <span class="sidebar-title">Integrations</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="sidebar-icon"><i class="fa fa-terminal"></i></span>
+                            <span class="sidebar-title">Authentication</span>
+                        </a>
+                    </li>
+					 <li>
+                        <a href="#">
+                            <span class="sidebar-icon"><i class="fa fa-terminal"></i></span>
+                            <span class="sidebar-title">Billing</span>
+                        </a>
+                    </li> -->
+                </ul>
+            </aside>            
+        </div>
+        <main id="page-content-wrapper" role="main">
+			<div class="section_content">
+					<!-- DEVICES SECTION START -->
+						<div id="decide_tab1">
+						<h3 class="dashboard-title">Devices</h3>
+						<h6 class="dashboard-title">Number of devices: 0</h6>
+							 <table class="table table-bordered" id="tbl_dynamic">
+								<thead>
+								  <tr>
+									<th>ID</th>
+									<th>Type</th>
+									<th>Name</th>
+									<th>Device Status</th>
+									<th>Reports</th>
+								  </tr>
+								</thead>
+								<tbody>
+								 <tr class="none-found">
+										<td colspan="8">
+											<p id="no-devices" class="none-found">You don't own any devices.</p>
+											<a href="/getdev/" class="btn import-btn">Add a device</a>
+										</td>
+									  </tr>
+
+									  <tr class="none-found">
+										<td>{{cg}}</td>
+										<td>{{kl}}</td>
+										<td>{{fd}}</td>
+										<td></td>
+										<td><a href="/graphs/" target="_blank">Reports</a></td>
+									  </tr>
+
+									  <tr class="none-found">
+										<td>{{ss}}</td>
+										<td>{{sss}}</td>
+										<td>{{ssss}}</td>
+										<td></td>
+										<td><a href="/graphs/" target="_blank">Reports</a></td>
+									  </tr>
+
+								  </tbody>
+							  </table>
+						</div>
+						<!-- DEVICES SECTION END -->
+						
+						<!-- PRODUCTS SECTION START -->
+						<div id="product_tab1">
+						<h3 class="dashboard-title">Trucks</h3>
+						<h6 class="dashboard-title">Number of devices: {{cgi}}</h6>
+							 <div class="product-cards">
+								  <div class="no-product">
+								 <p>Create a Product to unlock fleet management tools for scaling deployments</p>
+								 <a href="/act" id="" class="btn import-btn create-product-btn" data-toggle="modal" data-target="#myModal">+ Add Trucks</a>
+								 <a href="/act1" id="" class="btn import-btn create-product-btn" >+ View Trucks</a>
+								  </div>
+							</div>
+							 <!-- Modal -->
+								  <div class="modal fade" id="myModal" role="dialog">
+									<div class="modal-dialog">
+									
+									  <!-- Modal content-->
+									  <div class="modal-content">
+										<div class="modal-header">
+										  <button type="button" class="close" data-dismiss="modal">&times;</button>
+										  <h4 class="modal-title">Add  New Truck</h4>
+										</div>
+										<div class="modal-body">
+										  <form action="/act/"  method="POST">
+												<div class="form-group">
+													  <input type="text" class="form-control" name="usr1" id="usr1" placeholder="Truck Name">
+												</div>
+												<div class="form-group">
+													<input type="text" class="form-control" name="usr2" id="usr2" placeholder="Truck Number">
+											  </div>
+	
+																							
+												<div class="form-group">
+													  <input type="text" class="form-control" name="usr3" id="usr3" placeholder="Load Capacity">
+												</div>
+												<div class="form-group">
+													  <input type="text" class="form-control"  name="usr4" id="usr4" placeholder="Max Load">
+												</div>
+												<div>
+													<p>Sensors Need</p>
+												</div>
+												<label class="radio-inline">
+													<input type="checkbox" name="op1"  id="op1">Temperature
+												  </label>
+												  <label class="radio-inline">
+													<input type="checkbox" name="op2" id="op2">Tilt
+												  </label>
+												  <label class="radio-inline">
+													<input type="checkbox" name="op3" id="op3">Motion
+												  </label>
+												</label>
+												<label class="radio-inline">
+												  <input type="checkbox" name="op4" id="op4">OBD2
+												</label>
+											 
+										</div>
+										<div class="modal-footer text-center" style="text-align: center !important;">
+											<input type="submit" value="submit">
+										</form>
+										</div>
+									  </div>
+									  
+									</div>
+								  </div>
+							  <!-- END Modal -->
+						</div>
+						<!-- PRODUCTS SECTION END -->
+						
+						<!-- SIM CARD SECTION START -->
+						<div id="simcard_tab1">
+						<h3 class="dashboard-title">SIM Cards</h3>
+						<div id="ember1007" class="filter ember-view"><div class="search-box">
+							 <input type="text" placeholder="Filter by ICCID" id="ember1008" class="search-filter device-filter ember-text-field ember-view">
+								<i class="icon ion-close invisible" data-ember-action="" data-ember-action-1009="1009"></i>
+							</div>
+							<div class="dropdown">
+							  <a data-toggle="dropdown" aria-expanded="true" id="filter-dropdown" class="dropdown-toggle safe">
+								ICCID
+								<i class="fa fa-caret-down" aria-hidden="true"></i>
+
+							  </a>
+							  <ul role="menu" aria-labelledby="filter-dropdown" class="dropdown-menu">
+								  <li role="presentation"><a data-ember-action="" data-ember-action-1010="1010">ICCID</a></li>
+								  <li role="presentation"><a data-ember-action="" data-ember-action-1011="1011">Device ID</a></li>
+								  <li role="presentation"><a data-ember-action="" data-ember-action-1012="1012">Device Name</a></li>
+							  </ul>
+							</div>
+						</div>
+					<div class="container-fluid">
+						<!-- Example row of columns -->
+						<div class="row">
+				  
+				   
+				  
+							<div class="container-fluid" id="data-container"></div>
+				  
+				   
+				  
+						  </div>
+					 </div>
+					  <!--  second graph-->
+					  <div class="">
+						<div class="">
+						   
+							<div class="col-sm-6 col-md-6">
+								<div id=container1></div>
+							</div>
+
+					  </div> <!-- /container -->
+					  </div> <!-- /container -->
+				  
+						</div>
+						<!-- SIM CARD SECTION END -->
+						
+						<!-- INTEGRATION SECTION START -->
+						<div id="integration_tab1">
+						<h3 class="dashboard-title">Integrations</h3>
+							<div class="grid-tiles">
+								<a href="/integrations/create" id="ember1024" class="integration-wrapper ember-view">          <div class="new-integration">
+										 <i class="fa fa-plus-square ion-plus-circled" aria-hidden="true"></i>
+
+										  <span class="new-integration-title">New integration</span>
+									      </div>
+								</a>
+								<a href="/integrations/create" id="ember1024" class="integration-wrapper ember-view">          <div class="new-integration">
+										 <i class="fa fa-plus-square ion-plus-circled" aria-hidden="true"></i>
+
+										  <span class="new-integration-title">New integration</span>
+									      </div>
+								</a>
+							
+							</div>
+						</div>
+						
+		
+						<!-- INTEGRATION SECTION END -->
+			</div>
+        </main>
+    </div> 
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+    <script src="/static/js/highcharts.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script>
+     Highcharts.chart('container1', {
+  chart: {
+    type: 'line'
+  },
+  title: {
+    text: 'Monthly Average Temperature'
+  },
+  subtitle: {
+    text: 'Source: WorldClimate.com'
+  },
+  xAxis: {
+    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+  },
+  yAxis: {
+    title: {
+      text: 'Temperature (°C)'
+    }
+  },
+  plotOptions: {
+    line: {
+      dataLabels: {
+        enabled: true
+      },
+      enableMouseTracking: true
+    }
+  },
+  series: [{
+    name: 'DELHI',
+    data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+  }, {
+    name: 'Hyderbad',
+    data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+  }]
+});
+
+
+
+
+
+    </script>
+
+<script>
+$(document).ready(function(){
+   $("#decide_tab1").show();
+    $("#product_tab1, #integration_tab1, #simcard_tab1 ").hide();
+   
+  $("#tab1").click(function(){
+    $("#decide_tab1").show();
+    $("#product_tab1").hide();
+	$("#simcard_tab1").hide();
+	 $("#integration_tab1").hide();
+  });
+  
+  $("#tab2").click(function(){
+     $("#decide_tab1").hide();
+    $("#product_tab1").show();
+	 $("#simcard_tab1").hide();
+	  $("#integration_tab1").hide();
+  });
+  $("#tab3").click(function(){
+     $("#simcard_tab1").show();
+    $("#product_tab1").hide();
+    $("#decide_tab1").hide();
+	 $("#integration_tab1").hide();
+  });
+   $("#tab4").click(function(){
+     $("#integration_tab1").show();
+     $("#simcard_tab1").hide();
+    $("#product_tab1").hide();
+    $("#decide_tab1").hide();
+  });
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<style>
+	@import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
+
+body{background:#051f42; font-family: 'Didact Gothic', sans-serif;}
+.container { 
+  position: relative;
+  height:50vh;
+  display:block;
+  float:left;
+  width:100%;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 5%;
+  left:25%;
+  width:50%;
+  text-align:center;
+  color:#fff;
+  font-weight:bold;
+  letter-spacing:1.8px;
+  }
+.inline-fileds { margin:0px;margin-bottom: 16px;}
+.inline-fileds input[type="text"] {
+    width: 147px;
+    margin: 0px 5px;
+}
+
+  input[type=text], input[type=password], input[type=email]{
+  width: 300px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  background: transparent;
+color: #fff;
+font-weight: bold;
+}
+
+input[type=submit] {
+ width: 300px;
+  background-color: #ffffff;
+  color: #075973;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+div{
+  color: red;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+.info-links a {
+    font-size: 10px;
+    color: #fff;
+    text-decoration: navajowhite;
+}
+.inline-fileds_1 span a{font-weight:bold; text-align:center; color:#fff;text-decoration: none;
+font-size: 13px;}
+.inline-fileds_1{font-size: 11px;letter-spacing: normal; font-weight:normal; text-align:center;}
+
+</style>
+</head>
+<body>	
+<div class="container">
+  <div class="vertical-center">
+	<h1>NETSCORE IOT</h1>
+	<h4>Signup</h4>
+	<form  action="/snv/" method="POST">
+    <input type="email" name="em" placeholder="Email *"><br>
+    <p class="inline-fileds"><input type="text" name="fir" placeholder="First Name"><input type="text" name="lst" placeholder="Last Name"></p>
+    <input type="password" name="pass" placeholder="Password *"><br>
+    <input type="password" name="vpass"  placeholder="Verifi Password *"><br><div>{{cc}}</div>
+      <p class="inline-fileds">
+			 <label class="radio-inline">
+			  <input type="radio" name="opttick" id="gone"  value="personal"checked >Personal
+			 </label>
+			<label class="radio-inline">
+			  <input type="radio" name="opttick" id="radio_show" value="bussiness">Company account
+			</label>
+	 </p>
+	     <input type="text" name="cid" id="txt-hidden" placeholder="Company id *">
+ <p class="inline-fileds_1"><input type="checkbox" id="" name="" value=""> <label for="vehicle1"> I agree to the <span><a href="">Terms and Services</a></span> and <span><a href="">Public Policy</a></span></label></p>
+    <input type="submit" value="Sign Up">
+	<p class="inline-fileds_1"><span><a href="">I already have an account</a></span></label></p>
+	</form>
+  </div>
+</div>
+<script>
+$(document).ready(function(){
+        $("#txt-hidden").hide();
+
+    $('#radio_show').click(function(){
+        $("#txt-hidden").show();
+        
+    });
+    $('#gone').click(function(){
+        $("#txt-hidden").hide();
+        
+    });
+});
+</script>
+</body>
+</html>
