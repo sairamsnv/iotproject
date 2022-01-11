@@ -14,7 +14,7 @@ import pymongo
 ENV='dev'
 
 
-if ENV =='dev':
+if ENV =='sd':
     app.debug=True
     #psycopg2.connect(database="netscore",user="postgres",password="r@ms@i143",host="localhost")
     app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:r@ms@i143@localhost/netscore'
