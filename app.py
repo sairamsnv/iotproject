@@ -1,7 +1,6 @@
 from flask import Flask,request,jsonify
 from flask.templating import render_template
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
 app=Flask(__name__)
 import pymongo
 
@@ -24,7 +23,6 @@ else:
     app.debug=False
     app.config['SQLALCHEMY_DATABASE_URI']='postgres://yzdgkuettqacnj:59d2398cd919d2fd596b4d66f800f4e3fc729adf0267914df501aa9e2a64fef6@ec2-34-230-198-12.compute-1.amazonaws.com:5432/d5uq7hviqqldfe'
 db= SQLAlchemy(app)
-migrate=Migrate(app,db)
 
 class Check(db.Model):
     __tablename__='Login_api'
