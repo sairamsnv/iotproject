@@ -2,7 +2,7 @@ from flask import Flask,request,jsonify
 from flask.templating import render_template
 from flask_sqlalchemy import SQLAlchemy
 app=Flask(__name__)
-import pymongo
+
 
 
 
